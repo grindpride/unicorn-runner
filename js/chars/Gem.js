@@ -17,9 +17,9 @@ const GEM = {
     ]
 };
 
-function loadRainbow() {
+function loadGem() {
     return loadSpriteSheet(GEM)
-    .then(createRainbowFactory);
+    .then(createGemFactory);
 }
 
 class BehaviorGem extends Trait {
@@ -39,28 +39,29 @@ class BehaviorGem extends Trait {
 }
 
 
-function createRainbowFactory(sprite) {
-    const sparkAnim = sprite.animations.get('gem');
+function createGemFactory(sprite) {
+    const animation = sprite.animations.get('gem');
 
-    function routeAnim(rainbow) {
-        return sparkAnim(rainbow.lifetime);
+    function routeAnim(gem) {
+        return animation(gem.lifetime);
     }
 
-    function drawRainbow(context) {
+    function drawGem(context) {
+        // console.log('gem draw')
         sprite.draw(routeAnim(this), context, 0, 0, this.vel.x < 0);
     }
 
-    return function createRainbow() {
-        const rainbow = new Entity();
-        rainbow.size.set(83, 93);
+    return function createGem() {
+        const gem = new Entity();
+        gem.size.set(83, 93);
 
-        rainbow.addTrait(new Physics());
-        rainbow.addTrait(new Solid());
-        rainbow.addTrait(new Pickable());
-        rainbow.addTrait(new BehaviorGem());
+        gem.addTrait(new Physics());
+        gem.addTrait(new Solid());
+        gem.addTrait(new Pickable());
+        gem.addTrait(new BehaviorGem());
 
-        rainbow.draw = drawRainbow;
+        gem.draw = drawGem;
 
-        return rainbow;
+        return gem;
     };
 }

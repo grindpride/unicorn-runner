@@ -95,15 +95,11 @@ const LEVEL = {
     ],
     entities: [
         {
-            name: "rainbow",
-            pos: [408, 0]
-        },
-        {
             name: "enemyBug",
             pos: [780, 0]
         },
         {
-            name: "rainbow",
+            name: "gem",
             pos: [1608, 0]
         },
         {
@@ -153,6 +149,8 @@ function loadChars() {
         loadUnicorn().then(addFactory('unicorn')),
         loadEnemyBug().then(addFactory('enemyBug')),
         loadRainbow().then(addFactory('rainbow')),
+        loadGem().then(addFactory('gem')),
+
     ])
     .then(() => entityFactories);
 }
