@@ -1,5 +1,5 @@
 const UNICORN = {
-    imageURL: 'img/unicorn_full.png',
+    imageURL: 'img/unicorn_full_gem.png',
     frames: [
         {
             name: 'idle',

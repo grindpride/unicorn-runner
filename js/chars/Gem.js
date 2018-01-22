@@ -59,7 +59,7 @@ function createGemFactory(sprite) {
         gem.addTrait(new Solid());
         gem.addTrait(new Pickable());
         gem.addTrait(new BehaviorGem());
-
+        
         gem.draw = drawGem;
 
         return gem;

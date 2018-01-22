@@ -1,5 +1,5 @@
 const ENEMY_BUG = {
-    imageURL: 'img/bug_line.png',
+    imageURL: 'img/unicorn_full.png',
     frames: [
         {
             name: 'frame-1',

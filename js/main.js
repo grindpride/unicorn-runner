@@ -95,7 +95,7 @@ const LEVEL = {
     ],
     entities: [
         {
-            name: "enemyBug",
+            name: "gem",
             pos: [780, 0]
         },
         {
@@ -103,7 +103,7 @@ const LEVEL = {
             pos: [1608, 0]
         },
         {
-            name: "enemyBug",
+            name: "gem",
             pos: [1800, 0]
         },
         {
@@ -192,6 +192,7 @@ async function main(canvas) {
     });
 
     const timer = new Timer(1/60);
+    
     timer.update = function update(deltaTime) {
         level.update(deltaTime);
         camera.pos.x = Math.max(0, unicorn.pos.x - 100);
